@@ -18,9 +18,13 @@ class ChatMessageWasReceived implements ShouldBroadcast
      *
      * @return void
      */
+
+    public $chatMessage;
+    public $user;
     public function __construct()
     {
-        //
+        $this->chatMessage=$chatMessage;
+        $this->user=$user;
     }
 
     /**
@@ -30,6 +34,6 @@ class ChatMessageWasReceived implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new PrivateChannel('public-test-channel');
     }
 }
